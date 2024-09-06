@@ -1,0 +1,133 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi",
+          "Hey",
+          "How are you",
+          "Is anyone there?",
+          "Hello",
+          "Good day"
+        ],
+        "responses": [
+          "Hey! Welcome to our plant shop.",
+          "Hello, thanks for visiting our plant store!",
+          "Hi there, what can I do for you today?",
+          "Hi there, how can I help you with your plant needs?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye"],
+        "responses": [
+          "See you later, thanks for visiting our plant shop!",
+          "Have a nice day and happy planting!",
+          "Bye! Come back again soon to explore more plants."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+        "responses": ["Happy to help!", "Anytime! Enjoy your plants!", "My pleasure, glad I could help!"]
+      },
+      {
+        "tag": "items",
+        "patterns": [
+          "Which plants do you have?",
+          "What kinds of plants are there?",
+          "What plants do you sell?"
+        ],
+        "responses": [
+          "We offer a variety of indoor and outdoor plants, including succulents, Pothos, Monstera, and more.",
+          "We have succulents, tropical plants like Monstera, air-purifying Pothos, and many others."
+        ]
+      },
+      {
+        "tag": "payments",
+        "patterns": [
+          "Do you take credit cards?",
+          "Do you accept Mastercard?",
+          "Can I pay with Paypal?",
+          "Are you cash only?"
+        ],
+        "responses": [
+          "We accept VISA, Mastercard, and Paypal for all plant purchases.",
+          "We accept most major credit cards and Paypal for your convenience."
+        ]
+      },
+      {
+        "tag": "delivery",
+        "patterns": [
+          "How long does delivery take?",
+          "How long does shipping take?",
+          "When do I get my plants?"
+        ],
+        "responses": [
+          "Delivery takes 3-5 business days for plants.",
+          "Shipping takes 3-5 days, depending on your location."
+        ]
+      },
+      {
+        "tag": "plant_care",
+        "patterns": [
+          "How do I take care of my plant?",
+          "Can you give me plant care tips?",
+          "What care does my plant need?"
+        ],
+        "responses": [
+          "Sure! Make sure your plant gets enough sunlight and water, but be careful not to overwater.",
+          "Each plant is different, but most plants need moderate sunlight and water every 1-2 weeks."
+        ]
+      },
+      {
+        "tag": "pothos_care",
+        "patterns": [
+          "How do I care for my Pothos?",
+          "What kind of light does a Pothos need?",
+          "How often should I water my Pothos?"
+        ],
+        "responses": [
+          "Pothos thrive in low to medium indirect light. Water them when the top 1-2 inches of soil feel dry.",
+          "Pothos are pretty low maintenance. They prefer indirect light and need watering about once a week or when the soil feels dry."
+        ]
+      },
+      {
+        "tag": "succulent_care",
+        "patterns": [
+          "How do I care for succulents?",
+          "What kind of light do succulents need?",
+          "How often should I water my succulents?"
+        ],
+        "responses": [
+          "Succulents love bright, direct sunlight. Water them only when the soil is completely dry, usually every 2-3 weeks.",
+          "Succulents need lots of sunlight and very little water. Let the soil dry out completely between waterings."
+        ]
+      },
+      {
+        "tag": "monstera_care",
+        "patterns": [
+          "How do I care for my Monstera?",
+          "What kind of light does a Monstera need?",
+          "How often should I water my Monstera?"
+        ],
+        "responses": [
+          "Monstera plants love bright, indirect sunlight and need watering when the top inch of soil is dry.",
+          "Monstera thrives in bright, indirect light. Water every 1-2 weeks, allowing the soil to dry between waterings."
+        ]
+      },
+      {
+        "tag": "funny",
+        "patterns": [
+          "Tell me a plant joke!",
+          "Tell me something funny!",
+          "Do you know a plant joke?"
+        ],
+        "responses": [
+          "Why do plants hate math? Because it gives them square roots!",
+          "What did the tree wear to the pool party? Swimming trunks!"
+        ]
+      }
+    ]
+  }
+  
