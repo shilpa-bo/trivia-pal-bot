@@ -1,0 +1,2 @@
+# plant-pal-bot
+Simple chatbot that knows a tiny bit about plants
