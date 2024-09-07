@@ -21,7 +21,6 @@ for intent in intents['intents']:
         w = tokenize(pattern)
         all_words.extend(w)
         xy.append((w, tag))
-print(xy)
 tags = sorted(set(tags))
 ignore_items = ['?', '!', '.', ',']
 all_words = [stem(w) for w in all_words if w not in ignore_items]
@@ -47,18 +46,43 @@ class ChatDataset(Dataset):
         self.x_data = x_train
         self.y_data = y_train
 
-    def __getItem__(self, index):
+    def __getitem__(self, index):
         return self.x_data[index], self.y_data[index]
     def __len__(self):
         return self.n_samples
 # Hyperparameters
-batch_size = 8 # during training, model processes 8 samples at a time
-hidden_size = 8
+batch_size = 9 #during training, model processes 8 samples at a time
+hidden_size = 9
 output_size = len(tags) # number of different tags we have
 input_size = len(x_train[0]) # number of bag of words we created
-print(input_size, len(all_words), output_size, tags)
+learning_rate = 0.001
+num_epochs = 1000
 
 dataset = ChatDataset()
-train_loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=True, num_workers=2)
+train_loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=True, num_workers=0)
 
-model = NeuralNet(input_size, hidden_size, output_size)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = NeuralNet(input_size, hidden_size, output_size).to(device)
+
+# loss and optimizer
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate)
+
+# training loop
+for epoch in range(num_epochs):
+    for (words, labels) in train_loader:
+        words = words.to(device)
+        labels = labels.to(device)
+
+        # forward
+        outputs = model(words)
+        loss = criterion(outputs, labels)
+
+        # backward and optimizer step
+        # empty gradients first:
+        optimizer.zero_grad()
+        loss.backward() # back propagation
+        optimizer.step()
+    if (epoch+1) % 100 == 0:
+        print(f'epoch {epoch+1}/{num_epochs}, loss={loss.item():.4f}')
+print(f'final loss, loss={loss.item():.4f}')
