@@ -4,128 +4,178 @@
         "tag": "greeting",
         "patterns": [
           "Hi",
-          "Hey",
-          "How are you",
-          "Is anyone there?",
           "Hello",
-          "Good day"
+          "Hey",
+          "Good day",
+          "Is this the trivia bot?",
+          "Greetings!"
         ],
         "responses": [
-          "Hey! Welcome to our plant shop.",
-          "Hello, thanks for visiting our plant store!",
-          "Hi there, what can I do for you today?",
-          "Hi there, how can I help you with your plant needs?"
+          "Hello there! Ready to test your knowledge with some trivia?",
+          "Hi! Let's dive into some trivia fun. What category are you in the mood for?",
+          "Hey! How about some trivia to get things started?",
+          "Greetings! Which trivia category would you like to explore today?"
         ]
       },
       {
         "tag": "goodbye",
-        "patterns": ["Bye", "See you later", "Goodbye"],
+        "patterns": ["Bye", "See you later", "Goodbye", "I'm done", "Talk to you soon"],
         "responses": [
-          "See you later, thanks for visiting our plant shop!",
-          "Have a nice day and happy planting!",
-          "Bye! Come back again soon to explore more plants."
+          "Thanks for playing trivia! Hope to see you again soon!",
+          "Goodbye! Come back anytime for more trivia challenges!",
+          "Take care! Keep those brain cells sharp and see you next time!",
+          "See you later! Don't forget to come back for more fun trivia!"
         ]
       },
       {
         "tag": "thanks",
-        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-        "responses": ["Happy to help!", "Anytime! Enjoy your plants!", "My pleasure, glad I could help!"]
-      },
-      {
-        "tag": "items",
-        "patterns": [
-          "Which plants do you have?",
-          "What kinds of plants are there?",
-          "What plants do you sell?"
-        ],
+        "patterns": ["Thanks", "Thank you", "That was fun", "Thanks for the trivia"],
         "responses": [
-          "We offer a variety of indoor and outdoor plants, including succulents, Pothos, Monstera, and more.",
-          "We have succulents, tropical plants like Monstera, air-purifying Pothos, and many others."
+          "You're very welcome! I'm glad you enjoyed it!",
+          "Happy to help! Trivia is always fun, isn't it?",
+          "Anytime! Feel free to come back for more trivia!",
+          "I'm glad you had fun! Let's do it again soon!"
         ]
       },
       {
-        "tag": "payments",
+        "tag": "categories",
         "patterns": [
-          "Do you take credit cards?",
-          "Do you accept Mastercard?",
-          "Can I pay with Paypal?",
-          "Are you cash only?"
+          "What trivia categories do you have?",
+          "Show me the trivia categories",
+          "List the trivia categories",
+          "What kind of trivia topics are available?"
         ],
         "responses": [
-          "We accept VISA, Mastercard, and Paypal for all plant purchases.",
-          "We accept most major credit cards and Paypal for your convenience."
+          "We have categories like: History, Science, Sports, Geography, Movies, and Music. Which one do you want to try?",
+          "You can choose from: History, Science, Sports, Geography, Movies, or Music. Ready to test your knowledge?",
+          "Our categories include: History, Science, Sports, Geography, Movies, and Music. Pick one and let's play!",
+          "The trivia categories available are: History, Science, Sports, Geography, Movies, and Music. What's your choice?"
         ]
       },
       {
-        "tag": "delivery",
+        "tag": "history_trivia",
         "patterns": [
-          "How long does delivery take?",
-          "How long does shipping take?",
-          "When do I get my plants?"
+          "Give me a history trivia question",
+          "I want to try history trivia",
+          "Ask me a history question",
+          "Let's do some history trivia"
         ],
         "responses": [
-          "Delivery takes 3-5 business days for plants.",
-          "Shipping takes 3-5 days, depending on your location."
+          "Here's a history question: Who was the first President of the United States?",
+          "History time! In which year did World War I begin?",
+          "Time for a history challenge: Who was the first woman to win a Nobel Prize?",
+          "Let's test your history knowledge: Which empire built the Colosseum in Rome?"
+        ],
+        "answers": [
+          "George Washington",
+          "1914",
+          "Marie Curie",
+          "Roman Empire"
         ]
       },
       {
-        "tag": "plant_care",
+        "tag": "science_trivia",
         "patterns": [
-          "How do I take care of my plant?",
-          "Can you give me plant care tips?",
-          "What care does my plant need?"
+          "Give me a science trivia question",
+          "I want to try science trivia",
+          "Ask me a science question",
+          "Let's do some science trivia"
         ],
         "responses": [
-          "Sure! Make sure your plant gets enough sunlight and water, but be careful not to overwater.",
-          "Each plant is different, but most plants need moderate sunlight and water every 1-2 weeks."
+          "Here’s a science question: What is the chemical symbol for water?",
+          "Let's see if you're a science buff: What planet is known as the Red Planet?",
+          "Science time! Who developed the theory of general relativity?",
+          "Test your science knowledge: What is the most abundant gas in Earth's atmosphere?"
+        ],
+        "answers": [
+          "H2O",
+          "Mars",
+          "Albert Einstein",
+          "Nitrogen"
         ]
       },
       {
-        "tag": "pothos_care",
+        "tag": "sports_trivia",
         "patterns": [
-          "How do I care for my Pothos?",
-          "What kind of light does a Pothos need?",
-          "How often should I water my Pothos?"
+          "Give me a sports trivia question",
+          "I want to try sports trivia",
+          "Ask me a sports question",
+          "Let's do some sports trivia"
         ],
         "responses": [
-          "Pothos thrive in low to medium indirect light. Water them when the top 1-2 inches of soil feel dry.",
-          "Pothos are pretty low maintenance. They prefer indirect light and need watering about once a week or when the soil feels dry."
+          "Here's a sports question: Which country won the FIFA World Cup in 2018?",
+          "Sports trivia coming your way: How many players are there in a standard soccer team?",
+          "Let's see if you're a sports expert: Who holds the record for the most Olympic gold medals?",
+          "Here's a sports challenge: In which sport would you perform a 'slam dunk'?"
+        ],
+        "answers": [
+          "France",
+          "11",
+          "Michael Phelps",
+          "Basketball"
         ]
       },
       {
-        "tag": "succulent_care",
+        "tag": "geography_trivia",
         "patterns": [
-          "How do I care for succulents?",
-          "What kind of light do succulents need?",
-          "How often should I water my succulents?"
+          "Give me a geography trivia question",
+          "I want to try geography trivia",
+          "Ask me a geography question",
+          "Let's do some geography trivia"
         ],
         "responses": [
-          "Succulents love bright, direct sunlight. Water them only when the soil is completely dry, usually every 2-3 weeks.",
-          "Succulents need lots of sunlight and very little water. Let the soil dry out completely between waterings."
+          "Geography time! What is the capital city of Japan?",
+          "Test your geography skills: Which country has the longest coastline?",
+          "Let's challenge your geography knowledge: What is the largest desert in the world?",
+          "Here’s a geography question: Which river flows through the Amazon Rainforest?"
+        ],
+        "answers": [
+          "Tokyo",
+          "Canada",
+          "Antarctica",
+          "Amazon River"
         ]
       },
       {
-        "tag": "monstera_care",
+        "tag": "movies_trivia",
         "patterns": [
-          "How do I care for my Monstera?",
-          "What kind of light does a Monstera need?",
-          "How often should I water my Monstera?"
+          "Give me a movie trivia question",
+          "I want to try movie trivia",
+          "Ask me a movie question",
+          "Let's do some movie trivia"
         ],
         "responses": [
-          "Monstera plants love bright, indirect sunlight and need watering when the top inch of soil is dry.",
-          "Monstera thrives in bright, indirect light. Water every 1-2 weeks, allowing the soil to dry between waterings."
+          "Here's a movie question: Who directed the movie 'Inception'?",
+          "Let's see if you're a movie buff: In what year was the first Star Wars movie released?",
+          "Movies trivia time! What is the highest-grossing movie of all time?",
+          "Challenge your movie knowledge: Which movie features a character named Jack Dawson?"
+        ],
+        "answers": [
+          "Christopher Nolan",
+          "1977",
+          "Avatar",
+          "Titanic"
         ]
       },
       {
-        "tag": "funny",
+        "tag": "music_trivia",
         "patterns": [
-          "Tell me a plant joke!",
-          "Tell me something funny!",
-          "Do you know a plant joke?"
+          "Give me a music trivia question",
+          "I want to try music trivia",
+          "Ask me a music question",
+          "Let's do some music trivia"
         ],
         "responses": [
-          "Why do plants hate math? Because it gives them square roots!",
-          "What did the tree wear to the pool party? Swimming trunks!"
+          "Here's a music question: Who is known as the King of Pop?",
+          "Let's see if you're a music fan: What is the best-selling album of all time?",
+          "Music trivia coming your way: Which artist holds the record for the most Grammy awards?",
+          "Test your music knowledge: What band was Freddie Mercury the lead singer of?"
+        ],
+        "answers": [
+          "Michael Jackson",
+          "Thriller by Michael Jackson",
+          "Beyoncé",
+          "Queen"
         ]
       }
     ]
