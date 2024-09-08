@@ -26,41 +26,11 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "PlantPal"
+bot_name = "TriviaPal"
 print("Let's chat! type 'quit' to exit")
-# while True:
-#     sentence = input('You: ')
-#     if sentence == 'quit':
-#         break
 
-#     sentence = tokenize(sentence)
-#     x = bag_of_words(sentence, all_words)
-#     # reshape
-#     x = x.reshape(1, x.shape[0])
-#     x = torch.from_numpy(x)
-
-#     output = model(x)
-#     _, predicted = torch.max(output, dim=1)
-#     tag = tags[predicted.item()]
-
-#     # applying softmax 
-#     # check if probablity for tag is high enough  
-#     probs = torch.softmax(output, dim=1)
-#     prob = probs[0][predicted.item()]
-
-#     if prob.item() > 0.75:
-#         for intent in intents["intents"]:
-#             if tag == intent["tag"]:
-#                 print(f"{bot_name}: {random.choice(intent['responses'])}")
-#     else:
-#         print(f"{bot_name}: I do not understand...")
-
-while True:
-    sentence = input('You: ')
-    if sentence == 'quit':
-        break
-
-    # Keep the original input for answer comparison
+def get_response(sentence):
+     # Keep the original input for answer comparison
     raw_input = sentence
 
     # Tokenize and process the input for intent recognition
@@ -85,7 +55,7 @@ while True:
         # Reset after validation
         current_question = None
         current_answer = None
-        continue
+        
 
     if prob.item() > 0.75:
         for intent in intents["intents"]:
@@ -95,8 +65,52 @@ while True:
                     idx = random.randint(0, len(intent['responses']) - 1)
                     current_question = intent['responses'][idx]
                     current_answer = intent['answers'][idx].lower()  # Store the correct answer
-                    print(f"{bot_name}: {current_question}")
+                    return {current_question}
                 else:
-                    print(f"{bot_name}: {random.choice(intent['responses'])}")
+                    return random.choice(intent['responses'])
     else:
-        print(f"{bot_name}: I do not understand...")
+        return "I do not understand..."
+
+
+# while True:
+
+#     # Keep the original input for answer comparison
+#     raw_input = sentence
+
+#     # Tokenize and process the input for intent recognition
+#     sentence = tokenize(sentence)
+#     x = bag_of_words(sentence, all_words)
+#     x = x.reshape(1, x.shape[0])
+#     x = torch.from_numpy(x).to(device)
+
+#     output = model(x)
+#     _, predicted = torch.max(output, dim=1)
+#     tag = tags[predicted.item()]
+
+#     probs = torch.softmax(output, dim=1)
+#     prob = probs[0][predicted.item()]
+
+#     # Use the raw_input (unprocessed sentence) to compare with the current_answer
+#     if current_question:
+#         if raw_input.strip().lower() in current_answer.lower():
+#             print(f"{bot_name}: Correct! The answer is {current_answer}.")
+#         else:
+#             print(f"{bot_name}: Incorrect. The correct answer is {current_answer}.")
+#         # Reset after validation
+#         current_question = None
+#         current_answer = None
+#         continue
+
+#     if prob.item() > 0.75:
+#         for intent in intents["intents"]:
+#             if tag == intent["tag"]:
+#                 # Check if this intent has a trivia question and answer
+#                 if 'answers' in intent:
+#                     idx = random.randint(0, len(intent['responses']) - 1)
+#                     current_question = intent['responses'][idx]
+#                     current_answer = intent['answers'][idx].lower()  # Store the correct answer
+#                     print(f"{bot_name}: {current_question}")
+#                 else:
+#                     print(f"{bot_name}: {random.choice(intent['responses'])}")
+#     else:
+#         print(f"{bot_name}: I do not understand...")
