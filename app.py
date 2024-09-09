@@ -4,8 +4,8 @@ BG_VIOET = "#603B4D"
 BG_COLOR = "#BB8F89"  # Corrected color code
 TEXT_COLOR = "#FFF9EC"
 
-FONT = "Helvetica 14"
-FONT_BOLD = "Helvetica 13 bold"
+FONT = "Courier 14"
+FONT_BOLD = "Courier 13 bold"
 
 class ChatApplication:
     def __init__(self):
@@ -17,7 +17,7 @@ class ChatApplication:
 
     def _setup_main_window(self):
         self.window.title("Chat")
-        self.window.resizable(width=False, height=False)
+        self.window.resizable(width=True, height=True)
         self.window.configure(width=470, height=550, bg=BG_COLOR)
         # head label
         head_label = Label(self.window, bg=BG_COLOR, fg=TEXT_COLOR, text="Welcome", font=FONT_BOLD, pady=10)
